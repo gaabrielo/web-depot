@@ -14,16 +14,6 @@ export function HeroSection() {
 
       {/* Overlapping Button */}
       <div className="absolute bottom-0 right-0 z-20">
-        {/* --- O TRUQUE DA CURVA INVERTIDA --- */}
-        {/* 
-            1. Posicionado exatamente à esquerda do botão (-left-8)
-            2. bg-transparent: Para vermos a imagem através dele.
-            3. rounded-full: É um círculo.
-            4. shadow-[16px_16px_0_#fafafa]: A sombra branca é projetada
-               para baixo e para a direita. Como o elemento é um círculo
-               transparente, a sombra preenche tudo "exceto" a curva do círculo.
-               Isso cria o recorte perfeito na imagem.
-        */}
         <div className="absolute bg-transparent -left-12 bottom-0 w-12 h-12 rounded-full shadow-[24px_24px_0_#fafafa]"></div>
 
         <div className="bg-zinc-50 rounded-tl-3xl p-2 pb-0">

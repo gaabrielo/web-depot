@@ -38,12 +38,12 @@ export function DJProject() {
           <TabsTrigger value="work" asChild>
             <TabButton>Work</TabButton>
           </TabsTrigger>
-          <TabsTrigger value="store" asChild>
+          {/* <TabsTrigger value="store" asChild>
             <TabButton>Store</TabButton>
           </TabsTrigger>
           <TabsTrigger value="coupons" asChild>
             <TabButton>Coupons</TabButton>
-          </TabsTrigger>
+          </TabsTrigger> */}
         </TabsList>
         <div className="pr-2">
           <TabsContent value="work" asChild>
@@ -75,8 +75,18 @@ export function DJProject() {
               ))}
             </div>
           </TabsContent>
-          <TabsContent value="store"></TabsContent>
-          <TabsContent value="coupons"></TabsContent>
+          <TabsContent value="store" asChild>
+            <div className="space-y-2">
+              <div className="flex flex-col items-center">
+                <div className="w-full h-20 bg-zinc-200 flex-1"></div>
+                <p>Product name</p>
+                <Button size="sm" variant="secondary">
+                  BUY
+                </Button>
+              </div>
+            </div>
+          </TabsContent>
+          <TabsContent value="coupons">COUPONS</TabsContent>
         </div>
       </Tabs>
 

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import {
   SidebarInset,
@@ -8,11 +7,11 @@ import {
   SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/app-sidebar';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { Button } from '@/components/ui/button';
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import { DeviceToggleGroup } from '@/components/device-toggle-group';
 import { DeviceProvider } from '@/app/providers/device-context';
+
+import './globals.css';
+import { HeaderActions } from '@/components/header-actions';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -42,7 +41,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          // enableSystem
+          enableSystem
           disableTransitionOnChange
         >
           <DeviceProvider>
@@ -53,29 +52,7 @@ export default function RootLayout({
                   <header className="flex justify-between p-4 border-b border-zinc-200 dark:border-zinc-800">
                     <SidebarTrigger />
                     <DeviceToggleGroup />
-                    <div className="space-x-2">
-                      <Button
-                        size="icon"
-                        variant="outline"
-                        className="sm:size-7"
-                      >
-                        <IconBrandGithub
-                          size={20}
-                          className="text-foreground"
-                        />
-                      </Button>
-                      <Button
-                        size="icon"
-                        variant="outline"
-                        className="sm:size-7"
-                      >
-                        <IconBrandLinkedin
-                          size={20}
-                          className="text-foreground"
-                        />
-                      </Button>
-                      <ThemeToggle />
-                    </div>
+                    <HeaderActions />
                   </header>
                   <div className="flex-1 overflow-y-auto min-h-0">
                     {children}
